@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     List<Score> listHistory = new ArrayList<>();
     HistoryAdapter adapter;
     RecyclerView rvHistory;
+    private static final int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +43,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i = new Intent(getApplicationContext(), InputActivity.class);
-        startActivityForResult(i, 1);
+        startActivityForResult(i, REQUEST_CODE);
         return true;
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1) {
+        if (requestCode == REQUEST_CODE) {
             if(resultCode == Activity.RESULT_OK){
 
                 SimpleDateFormat dateFormatter = new SimpleDateFormat("dd MMMM yyyy", Locale.US);
                 Calendar c = Calendar.getInstance();
-                c.set(Calendar.HOUR_OF_DAY, 0);
                 String date = dateFormatter.format(c.getTime());
 
                 listHistory.add( new Score(data.getIntExtra("scoreA", 0),

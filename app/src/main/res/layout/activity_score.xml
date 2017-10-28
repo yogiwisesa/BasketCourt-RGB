@@ -22,7 +22,7 @@
                 android:id="@+id/tvTeamA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RPL"
+                android:text="@string/teamA"
                 android:gravity="center"/>
 
             <TextView

@@ -64,11 +64,6 @@ public class ScoreActivity extends AppCompatActivity implements View.OnClickList
         teamB = i.getStringExtra("teamB");
         tvTeamA.setText(teamA);
         tvTeamB.setText(teamB);
-
-        scoreA = i.getIntExtra("scoreA", 0);
-        scoreB = i.getIntExtra("scoreB", 0);
-        tvScoreA.setText(String.valueOf(scoreA));
-        tvScoreB.setText(String.valueOf(scoreB));
     }
 
     @Override

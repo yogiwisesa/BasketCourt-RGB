@@ -58,25 +58,17 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvScoreA, tvScoreB, tvTeamA, tvTeamB, tvTanggal, tvPertandingan;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
-            tvScoreA = (TextView) itemView.findViewById(R.id.tvScoreA);
-            tvScoreB = (TextView) itemView.findViewById(R.id.tvScoreB);
-            tvTeamA = (TextView) itemView.findViewById(R.id.tvTeamA);
-            tvTeamB = (TextView) itemView.findViewById(R.id.tvTeamB);
-            tvTanggal = (TextView) itemView.findViewById(R.id.tvTanggal);
-            tvPertandingan = (TextView) itemView.findViewById(R.id.tvPertandingan);
+            tvScoreA =  itemView.findViewById(R.id.tvScoreA);
+            tvScoreB =  itemView.findViewById(R.id.tvScoreB);
+            tvTeamA =  itemView.findViewById(R.id.tvTeamA);
+            tvTeamB = itemView.findViewById(R.id.tvTeamB);
+            tvTanggal = itemView.findViewById(R.id.tvTanggal);
+            tvPertandingan = itemView.findViewById(R.id.tvPertandingan);
         }
-
-        @Override
-        public void onClick(View view) {
-            // kalau mau onclick
-        }
-
     }
-
 }

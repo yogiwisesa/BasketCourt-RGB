@@ -12,6 +12,7 @@ public class InputActivity extends AppCompatActivity {
     Button btnCreate;
     EditText edtTeamA, edtTeamB;
     String teamA, teamB;
+    private static final int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +31,14 @@ public class InputActivity extends AppCompatActivity {
                 teamB = edtTeamB.getText().toString();
                 i.putExtra("teamA", teamA);
                 i.putExtra("teamB", teamB);
-                startActivityForResult(i, 1);
+                startActivityForResult(i, REQUEST_CODE);
             }
         });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1) {
+        if (requestCode == REQUEST_CODE) {
             if(resultCode == Activity.RESULT_OK){
                 Intent returnIntent = new Intent();
                 returnIntent.putExtra("scoreA", data.getIntExtra("scoreA",0));
