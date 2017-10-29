@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ public class InputActivity extends AppCompatActivity {
                 teamB = edtTeamB.getText().toString();
                 i.putExtra("teamA", teamA);
                 i.putExtra("teamB", teamB);
+                Log.i("Test", teamA + teamB);
                 startActivityForResult(i, REQUEST_CODE);
             }
         });
